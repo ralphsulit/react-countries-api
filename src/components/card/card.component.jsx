@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 
 import './card.styles.scss';
 
-const Card = ({ country}) => {
+const Card = ({ country }) => {
   const { name, flags, population, region, capital } = country;
 
   return (
