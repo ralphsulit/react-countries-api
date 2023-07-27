@@ -4,11 +4,15 @@ import axios from 'axios';
 
 export const CountriesContext = createContext({
   countries: [],
+  searchField: '',
+  setSearchField: () => {},
+  filteredCountries: [],
 });
 
 export const CountriesProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
-  const value = { countries };
+  const [searchField, setSearchField] = useState('');
+  const [filteredCountries, setFilteredCountries] = useState(countries);
 
   //fetch data from Rest Countries API  
   useEffect(() => {
@@ -23,6 +27,27 @@ export const CountriesProvider = ({ children }) => {
 
     fetchData();
   }, []);
+
+  //filter countries 
+  useEffect(() => {
+    const newFilteredCountries = countries.filter((country) => {
+      return country.name.common.toLowerCase().includes(searchField);
+    });
+
+    setFilteredCountries(newFilteredCountries);
+  }, [countries, searchField])
+
+  const onSearchChange = (e) => {
+    const searchFieldString = e.target.value.toLowerCase();
+    setSearchField(searchFieldString);
+  };
+  
+  const value = {
+    countries,
+    filteredCountries,
+    onSearchChange,
+  };
+
 
   return <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>;
 };
