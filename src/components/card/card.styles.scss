@@ -2,13 +2,14 @@
 
 .card {
   width: 300px;
-  height: 350px;
+  height: 380px;
   background-color: $dark-text;
 
   .card-details {
 
     p {
       color: $white;
+      margin-bottom: 4px;
     }
 
     span {
