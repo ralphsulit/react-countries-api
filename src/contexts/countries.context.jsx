@@ -17,7 +17,7 @@ export const CountriesProvider = ({ children }) => {
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const [regions, setRegions] = useState([]);
 
-  //fetch data from Rest Countries API  
+  // fetch data from Rest Countries API  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,7 +35,7 @@ export const CountriesProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  //filter countries 
+  // filter countries 
   useEffect(() => {
     const newFilteredCountries = countries.filter((country) => {
       return country.name.common.toLowerCase().includes(searchField);
@@ -44,7 +44,7 @@ export const CountriesProvider = ({ children }) => {
     setFilteredCountries(newFilteredCountries);
   }, [countries, searchField]);
 
-  // Filter countries by region
+  // filter countries by region
   const handleFilterByRegion = (region) => {
     if (region === '') {
       setFilteredCountries(countries);
@@ -54,7 +54,13 @@ export const CountriesProvider = ({ children }) => {
     }
   };
 
-  //handle the change event of the search input field.
+  // reset filtered countries
+  const handleResetCountries = () => {
+    setFilteredCountries(countries);
+  };
+
+
+  // handle the change event of the search input field.
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLowerCase();
     setSearchField(searchFieldString);
@@ -66,6 +72,7 @@ export const CountriesProvider = ({ children }) => {
     regions,
     onSearchChange,
     handleFilterByRegion,
+    handleResetCountries
   };
 
 
