@@ -8,12 +8,16 @@ const Card = ({ country}) => {
 
   return (
     <Fragment>
-      <section className='card'>
-        <img src={flags.png} alt={name.common} />
-        <h1>{name.common}</h1>
-        <p>Population: {population}</p>
-        <p>Region: {region}</p>
-        <p>Capital: {capital}</p>
+      <section className='card max-w-sm rounded overflow-hidden shadow-lg bg-slate-700'>
+        <img className='w-full' src={flags.png} alt={name.common} />
+        <div className='px-6 py-4'>
+          <div className='font-bold text-xl mb-2'>{name.common}</div>
+          <div className='card-details text-gray-700 text-base'>
+            <p>Population: <span>{population}</span></p>
+            <p>Region: <span>{region}</span></p>
+            <p>Capital: <span>{capital}</span></p>
+          </div>
+        </div>
       </section>
     </Fragment>
   );

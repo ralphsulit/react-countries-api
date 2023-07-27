@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <section className='home bg-slate-800 h-full'>
+      <section className='home-container h-full'>
         <SearchBox />
         <CardList countries={countries} />
       </section>
