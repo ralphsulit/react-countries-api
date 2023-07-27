@@ -1,0 +1,16 @@
+@import '../../utils/styles/variables';
+
+.region-selector-btn {
+  background-color: $dark-text;
+  border: 1px solid transparent;
+  padding: 8px 15px;
+  width: 200px;
+  height: 55px;
+
+}
+
+.menu-item {
+  background-color: $dark-text;
+  color: $white;
+  width: 200px;
+}

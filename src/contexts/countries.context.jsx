@@ -7,12 +7,15 @@ export const CountriesContext = createContext({
   searchField: '',
   setSearchField: () => {},
   filteredCountries: [],
+  regions: [],
+  setRegions: () => {}
 });
 
 export const CountriesProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [searchField, setSearchField] = useState('');
   const [filteredCountries, setFilteredCountries] = useState(countries);
+  const [regions, setRegions] = useState([]);
 
   //fetch data from Rest Countries API  
   useEffect(() => {
@@ -20,6 +23,10 @@ export const CountriesProvider = ({ children }) => {
       try {
         const res = await axios.get('https://restcountries.com/v3.1/all/');
         setCountries(res.data);
+
+        //get regions from data
+        const uniqueRegions = [...new Set(res.data.map(country => country.region))];
+        setRegions(uniqueRegions);
       } catch (error) {
         console.error(error);
       }
@@ -35,8 +42,19 @@ export const CountriesProvider = ({ children }) => {
     });
 
     setFilteredCountries(newFilteredCountries);
-  }, [countries, searchField])
+  }, [countries, searchField]);
 
+  // Filter countries by region
+  const handleFilterByRegion = (region) => {
+    if (region === '') {
+      setFilteredCountries(countries);
+    } else {
+      const filtered = countries.filter((country) => country.region === region);
+      setFilteredCountries(filtered);
+    }
+  };
+
+  //handle the change event of the search input field.
   const onSearchChange = (e) => {
     const searchFieldString = e.target.value.toLowerCase();
     setSearchField(searchFieldString);
@@ -45,7 +63,9 @@ export const CountriesProvider = ({ children }) => {
   const value = {
     countries,
     filteredCountries,
+    regions,
     onSearchChange,
+    handleFilterByRegion,
   };
 
 
