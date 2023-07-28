@@ -1,11 +1,10 @@
-
 import { Fragment } from 'react';
 
 import './card.styles.scss';
 
 const Card = ({ country }) => {
   const { name, flags, population, region, capital } = country;
-
+  
   return (
     <Fragment>
       <section className='card max-w-sm rounded overflow-hidden shadow-lg bg-slate-700'>

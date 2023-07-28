@@ -16,6 +16,7 @@ export const CountriesProvider = ({ children }) => {
   const [searchField, setSearchField] = useState('');
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const [regions, setRegions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // fetch data from Rest Countries API  
   useEffect(() => {
@@ -23,12 +24,14 @@ export const CountriesProvider = ({ children }) => {
       try {
         const res = await axios.get('https://restcountries.com/v3.1/all/');
         setCountries(res.data);
+        setLoading(false);
 
         //get regions from data
         const uniqueRegions = [...new Set(res.data.map(country => country.region))];
         setRegions(uniqueRegions);
       } catch (error) {
         console.error(error);
+        setLoading(false);
       }
     };
 
@@ -70,6 +73,7 @@ export const CountriesProvider = ({ children }) => {
     countries,
     filteredCountries,
     regions,
+    loading,
     onSearchChange,
     handleFilterByRegion,
     handleResetCountries
