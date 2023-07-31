@@ -64,7 +64,7 @@ const CardDetails = () => {
 
   return (
     <Fragment>
-      <section className='card-details-container'>
+      <section className='card-details-container max-w-xs mx-auto'>
         <button onClick={handleBackButton} className='card-details-btn rounded-sm drop-shadow-lg'><ArrowLeft size={16}/>Back</button>
         <div className='card-details mt-20 flex flex-col item-center'>
           <img src={flags.png} alt={country.name.common} />
