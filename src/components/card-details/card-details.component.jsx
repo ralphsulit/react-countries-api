@@ -1,9 +1,11 @@
 
 import { Fragment, useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import {ArrowLeft}  from 'react-feather';
 
 import { CountriesContext } from '../../contexts/countries.context';
 import { languageCodes } from '../../utils/language-codes';
+
 
 import './card-details.scss';
 
@@ -13,6 +15,8 @@ const CardDetails = () => {
   
   const [countryDataLoaded, setCountryDataLoaded] = useState(false);
   const [country, setCountry] = useState(null);
+
+  const navigate = useNavigate();
 
   // Find the country object that matches the cca3 parameter
   useEffect(() => {
@@ -38,6 +42,11 @@ const CardDetails = () => {
     }
   }
 
+  // Get back from previous page
+  const handleBackButton = () => {
+    navigate('/');
+  };
+
     // Destructure the details from the country object
   const {
     name,
@@ -55,6 +64,7 @@ const CardDetails = () => {
 
   return (
     <Fragment>
+      <button onClick={handleBackButton}><ArrowLeft />Back</button>
       <section>
         <div>
           <img src={flags.png} alt={country.name.common} />
