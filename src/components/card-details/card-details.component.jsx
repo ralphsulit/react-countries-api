@@ -64,9 +64,9 @@ const CardDetails = () => {
 
   return (
     <Fragment>
-      <section className='card-details-container'>
+      <section className='card-details-container md:max-w-full'>
         <button onClick={handleBackButton} className='card-details-btn rounded-sm drop-shadow-lg'><ArrowLeft size={16}/>Back</button>
-        <div className='card-details mt-20 flex flex-col item-center'>
+        <div className='card-details mt-20 flex flex-col md:flex-row md:justify-between md:items-center'>
           <img src={flags.png} alt={country.name.common} />
           <div className='card-body mt-8'>
             <h1 className='text-xl font-bold'>{name.common}</h1>

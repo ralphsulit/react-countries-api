@@ -24,9 +24,20 @@
       height: 200px;
       width: 300px;
     }
+  }
 
-    .border-countries {
-      background-color: $dark-text;
+}
+
+
+@media (min-width: 768px) { 
+  .card-details-container {
+
+    .card-details {
+      img {
+        height: 275px;
+        width: 400px;
+      }
     }
+    
   }
 }
