@@ -1,0 +1,32 @@
+@import '../../utils/styles/variables';
+
+.card-details-container {
+  color: $white;
+  height: calc(100vh - 64px);
+  padding: 20px;
+
+  
+  .card-details-btn {
+    background-color: $dark-text;
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100px;
+    height: 30px;
+    padding: 14px 16px;
+  }
+
+  .card-details {
+    
+    img {
+      height: 200px;
+      width: 300px;
+    }
+
+    .border-countries {
+      background-color: $dark-text;
+    }
+  }
+}

@@ -42,7 +42,7 @@ const CardDetails = () => {
     }
   }
 
-  // Get back from previous page
+  // navigate to homepage
   const handleBackButton = () => {
     navigate('/');
   };
@@ -64,26 +64,37 @@ const CardDetails = () => {
 
   return (
     <Fragment>
-      <button onClick={handleBackButton}><ArrowLeft />Back</button>
-      <section>
-        <div>
+      <section className='card-details-container'>
+        <button onClick={handleBackButton} className='card-details-btn rounded-sm drop-shadow-lg'><ArrowLeft size={16}/>Back</button>
+        <div className='card-details mt-20 flex flex-col item-center'>
           <img src={flags.png} alt={country.name.common} />
+          <div className='card-body mt-8'>
+            <h1 className='text-xl font-bold'>{name.common}</h1>
+            <div className='text-sm leading-6'>
+              <div className='my-5'>
+                <p><span className='font-semibold'>Native Name: </span>{nativeNameCommon}</p>
+                <p><span className='font-semibold'>Population: </span>{population}</p>
+                <p><span className='font-semibold'>Region: </span> {region}</p>
+                <p><span className='font-semibold'>Sub Region: </span> {subregion}</p>
+                <p><span className='font-semibold'>Capital: </span> {capital[0]}</p>
+              </div>
+              <div className='my-5'>
+                <p><span className='font-semibold'>Top Level Domain:</span> {tld?.[0]}</p>
+                <p><span className='font-semibold'>Currency:</span> {Object.values(currencies)[0].name}</p>
+                <p><span className='font-semibold'>Languages:</span> {Object.values(languages).join(', ')}</p>
+              </div>
+            </div>
+              {borders && borders.length > 0 && (
+              <p className='text-sm'>
+                <span className='font-semibold'>Border Countries: <br /></span>
+                {borders.map((border) => {
+                  const borderCountry = countries.find((country) => country.cca3 === border);
+                  return borderCountry ? borderCountry.name.common : '';
+                }).join(', ')}
+              </p>
+              )}
+            </div>
         </div>
-        <h1>{name.common}</h1>
-        <p>Region: {region}</p>
-        <p>Sub Region: {subregion}</p>
-        <p>Capital: {capital[0]}</p>
-        <p>Population: {population}</p>
-        <p>Languages: {Object.values(languages).join(', ')}</p>
-        <p>Currency: {Object.values(currencies)[0].name}</p>
-        <p>Native Name: {nativeNameCommon}</p>
-        <p>Top Level Domain: {tld?.[0]}</p>
-        {borders && borders.length > 0 && (
-          <p>Border Countries: {borders.map((border) => {
-            const borderCountry = countries.find((country) => country.cca3 === border);
-            return borderCountry ? borderCountry.name.common : '';
-          }).join(', ')}</p>
-        )}
       </section>
     </Fragment>
   );
