@@ -25,4 +25,19 @@
       width: 300px;
     }
   }
+
+}
+
+
+@media (min-width: 768px) { 
+  .card-details-container {
+
+    .card-details {
+      img {
+        height: 275px;
+        width: 400px;
+      }
+    }
+    
+  }
 }

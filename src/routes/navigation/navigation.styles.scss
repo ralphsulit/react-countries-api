@@ -3,4 +3,8 @@
 .nav-container {
   background-color: $dark-text;
   color: $white;
+
+  .element-container {
+    padding: 20px;
+  }
 }
