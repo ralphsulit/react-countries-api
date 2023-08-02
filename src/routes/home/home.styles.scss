@@ -1,13 +1,11 @@
 @import '../../utils/styles/variables';
 
 .home-container {
-  background-color: $dark-bg;
-  color: $white;
-
+  
   @media (min-width: 768px) { 
     .home-element {
       margin: 0;
-      margin: 25px auto;
+      margin: 0 auto;
       flex-direction: row;
       justify-content: space-between;
     }
@@ -15,7 +13,7 @@
 
   @media (min-width: 1280px) { 
     .home-element {
-      margin: 25px auto;
+      margin: 0 auto;
     }
   }
 }

@@ -24,7 +24,7 @@ const CardList = () => {
   return (
     <Fragment>
       <section className='container mx-auto'>
-        <div className='grid grid-cols-1 gap-28 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center'>
+        <div className='grid grid-cols-1 gap-28 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center'>
           { 
             filteredCountries.map((country) => (
               <div

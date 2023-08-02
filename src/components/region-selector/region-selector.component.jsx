@@ -23,13 +23,13 @@ const RegionSelector = () => {
         <div>
           <button
             id='region-btn'
-            className='region-selector-btn rounded-lg flex items-center justify-between '
+            className='region-selector-btn rounded-lg flex items-center justify-between bg-lightBgSecondary text-lightText dark:bg-darkBgSecondary dark:text-darkText'
             type='button'
             onClick={toggleHandler}
           >
             Filter By Region
             <svg
-              className={`-mr-1 h-5 w-5 text-gray-400 ${isActive ? 'tranform rotate-180' : ''}`}
+              className={`-mr-1 h-5 w-5 bg-lightBgSecondary text-lightText dark:bg-darkBgSecondary dark:text-darkText  ${isActive ? 'tranform rotate-180' : ''}`}
               viewBox="0 0 20 20"
               fill="currentColor"
               aria-hidden="true"
@@ -44,7 +44,7 @@ const RegionSelector = () => {
         </div>
 
         {isActive && (
-          <div className='absolute menu-item rounded-lg mt-1' role='menu' aria-orientation='vertical' aria-labelledby='region-btn' tabIndex='-1'>
+          <div className='absolute menu-item rounded-lg mt-1 bg-lightBgSecondary text-lightText dark:bg-darkBgSecondary dark:text-darkText' role='menu' aria-orientation='vertical' aria-labelledby='region-btn' tabIndex='-1'>
             <div className='py-1' role='none'>
               {
                 regions.map((region, i) => (
