@@ -19,7 +19,7 @@ const RegionSelector = () => {
 
   return (
     <Fragment>
-      <section className='relative inline-block pr-12'>
+      <section className='relative inline-block pl-2.5 my-5 md:my-0 md:p-2.5'>
         <div>
           <button
             id='region-btn'
