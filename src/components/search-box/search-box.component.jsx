@@ -16,7 +16,7 @@ const SearchBox = () => {
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
               </svg>
           </div>
-          <input onChange={onSearchChange} type="search" id="default-search" className="search-box w-72 p-4 pl-14 text-sm rounded-lg outline-none" placeholder="Search for a country..." required />
+          <input onChange={onSearchChange} type="search" id="default-search" className="search-box w-72 p-4 pl-14 text-sm rounded-lg outline-nonebg-lightBgSecondary text-lightText dark:bg-darkBgSecondary dark:text-darkText" placeholder="Search for a country..." required />
         </div>
       </section>
     </Fragment>
