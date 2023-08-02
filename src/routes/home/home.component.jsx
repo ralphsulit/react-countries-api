@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Fragment>
       <section className='home-container h-full'>
-        <div className='flex justify-between items-center'>
+        <div className='home-element flex flex-col w-full max-w-xs mx-auto md:max-w-3xl lg:max-w-screen-2xl'>
           <SearchBox />
           <RegionSelector />
         </div>

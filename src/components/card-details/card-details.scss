@@ -19,7 +19,8 @@
   }
 
   .card-details {
-    
+    max-width: 800px;
+
     img {
       height: 200px;
       width: 300px;
@@ -33,6 +34,8 @@
   .card-details-container {
 
     .card-details {
+      max-width: 900px;
+
       img {
         height: 275px;
         width: 400px;

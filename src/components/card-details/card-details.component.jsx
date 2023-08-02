@@ -64,14 +64,14 @@ const CardDetails = () => {
 
   return (
     <Fragment>
-      <section className='card-details-container md:max-w-full'>
+      <section className='card-details-container md:mx-auto md:max-w-3xl lg:max-w-7xl'>
         <button onClick={handleBackButton} className='card-details-btn rounded-sm drop-shadow-lg'><ArrowLeft size={16}/>Back</button>
         <div className='card-details mt-20 flex flex-col md:flex-row md:justify-between md:items-center'>
           <img src={flags.png} alt={country.name.common} />
-          <div className='card-body mt-8'>
-            <h1 className='text-xl font-bold'>{name.common}</h1>
-            <div className='text-sm leading-6'>
-              <div className='my-5'>
+          <div className='card-body mt-8 lg:mt-0'>
+            <h1 className='text-xl lg:text-3xl font-bold'>{name.common}</h1>
+            <div className='text-sm leading-6 lg:flex'>
+              <div className='my-5 lg:mr-8'>
                 <p><span className='font-semibold'>Native Name: </span>{nativeNameCommon}</p>
                 <p><span className='font-semibold'>Population: </span>{population}</p>
                 <p><span className='font-semibold'>Region: </span> {region}</p>
