@@ -1,6 +1,7 @@
 @import '../../utils/styles/variables';
 
 .home-container {
+  min-height: 100vh;
   
   @media (min-width: 768px) { 
     .home-element {
