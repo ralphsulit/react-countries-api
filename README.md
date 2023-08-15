@@ -104,7 +104,7 @@ useEffect(() => {
 ## Author
 
 - Website - [Ralph Sulit]
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor 
 
 ## Acknowledgments
 
