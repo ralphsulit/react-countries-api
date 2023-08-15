@@ -33,6 +33,8 @@ Users should be able to:
 ![](src/assets/screenshots/rest-countries2.jpg)
 ![](src/assets/screenshots/rest-countries3.jpg)
 ![](src/assets/screenshots/rest-countries4.jpg)
+![](src/assets/screenshots/rest-countries5.jpg)
+![](src/assets/screenshots/rest-countries6.jpg)
 
 ### Links
 
